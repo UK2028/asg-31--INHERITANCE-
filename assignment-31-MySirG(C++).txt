@@ -725,8 +725,10 @@ public:
 int main()
 {
     int n,m,i=0;
-    FullTime f[50];
-    PartTime p[50];
+    FullTime *f;
+    f = new FullTime[50];
+    PartTime *p;
+    p = new PartTime[50];
     while(1)
     {
         int ch;
@@ -933,18 +935,17 @@ int main()
     int n;
     cout<<"Enter How Many Customer Details You Want: ";
     cin>>n;
-
-    Borrower b[n];
+    Borrower *p;
+    p= new Borrower[n];
     for(int i=0;i<n;i++)
     {
-        b[i].inputDetailsOfBorrower();
+        p[i].inputDetailsOfBorrower();
     }
     cout<<"Details Of Customer: "<<endl;
     for(int i=0;i<n;i++)
     {
-        b[i].displayDetails();
-    }
-    return 0;
+        p[i].displayDetails();
+    }    return 0;
 }
 
 
@@ -1046,17 +1047,18 @@ int main()
     int n;
     cout<<"Enter How Many Students you want: ";
     cin>>n;
-    StudentResult s[n];
+    StudentResult *p;
+    p = new StudentResult[n];
     for(int i=0;i<n;i++)
     {
-        s[i].setId();
-        s[i].setName();
-        s[i].setMarks();
+        p[i].setId();
+        p[i].setName();
+        p[i].setMarks();
     }
     cout<<"Details of Students: "<<endl;
     for(int i=0;i<n;i++)
     {
-        s[i].displayResult();
+        p[i].displayResult();
     }
     return 0;
 }
@@ -1187,23 +1189,24 @@ int main()
     int n;
     cout<<"Enter MANAGERS count: ";
     cin>>n;
-    Manager m[n];
+    Manager *p;
+    p = new Manager[n];
     for(int i=0;i<n;i++)
     {
         cout<<"Enter Worker Info for "<<i+1<<" : "<<endl;
         cout<<endl<<"----------------------------------"<<endl;
-        m[i].setCode();
-        m[i].setName();
-        m[i].setSalary();
-        m[i].setDA();
-        m[i].setHRA();
+        p[i].setCode();
+        p[i].setName();
+        p[i].setSalary();
+        p[i].setDA();
+        p[i].setHRA();
     }
     cout<<"--------------------------------"<<endl;
     cout<<"       Manager Information        "<<endl;
     cout<<"--------------------------------"<<endl;
     for(int i=0;i<n;i++)
     {
-        m[i].displayManager();
+        p[i].displayManager();
     }
     return 0;
 }
